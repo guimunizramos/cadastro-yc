@@ -116,7 +116,7 @@ const YouConForm = () => {
       console.error("Erro ao enviar formulário:", err);
     }
 
-    window.location.href = "https://calendar.app.google/dBuq3LUK1s6y9JRv9";
+    window.location.href = "https://calendar.app.google/GktonHjd7864Dsbs9";
   };
 
   const updateField = (field: string, value: string) => {
