@@ -29,6 +29,9 @@ const Index = () => {
         {/* Hero */}
         <main className="flex-1 px-4 py-12 md:py-20">
           <div className="max-w-3xl mx-auto text-center mb-12">
+            <span className="inline-block mb-6 px-5 py-1.5 rounded-full border border-primary text-primary uppercase text-xs font-semibold tracking-widest">
+              OPORTUNIDADE EXCLUSIVA
+            </span>
             <h1 className="text-3xl font-extrabold leading-tight text-foreground mb-6 font-heading px-0 md:text-6xl">
               DÊ O PRÓXIMO PASSO PARA A SUA CASA EM{" "}
               <span className="text-primary">STEEL FRAME</span>
