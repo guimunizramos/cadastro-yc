@@ -1,5 +1,12 @@
 import { useState } from "react";
 
+const maskPhone = (value: string) => {
+  const digits = value.replace(/\D/g, "").slice(0, 11);
+  if (digits.length <= 2) return digits.length ? `(${digits}` : "";
+  if (digits.length <= 7) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+  return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+};
+
 const serviceOptions = [
   "Projetos de Arquitetura e Engenharia",
   "Construção/Obra do Zero",
@@ -140,7 +147,7 @@ const YouConForm = () => {
             className="input-field"
             placeholder={placeholder}
             value={formData[key as keyof typeof formData]}
-            onChange={(e) => updateField(key, e.target.value)}
+            onChange={(e) => updateField(key, key === "telefone" ? maskPhone(e.target.value) : e.target.value)}
           />
           {errors[key] && <p className="text-sm text-destructive mt-1">{errors[key]}</p>}
         </div>
