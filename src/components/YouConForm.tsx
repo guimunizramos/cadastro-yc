@@ -91,10 +91,24 @@ const YouConForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
     setSubmitting(true);
+
+    try {
+      await fetch("https://webhook.lp-youconprojetos.com.br/webhook/formulario-steel-frame", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Basic " + btoa("admin:123456"),
+        },
+        body: JSON.stringify(formData),
+      });
+    } catch (err) {
+      console.error("Erro ao enviar formulário:", err);
+    }
+
     window.location.href = "https://calendar.app.google/dBuq3LUK1s6y9JRv9";
   };
 
