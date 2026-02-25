@@ -30,36 +30,32 @@ const orcamentoOptions = [
   "1.2 a +2 milhões",
 ];
 
-interface RadioGroupFieldProps {
+interface SelectFieldProps {
   label: string;
   options: string[];
   value: string;
   onChange: (val: string) => void;
+  placeholder: string;
   error?: string;
 }
 
-const RadioGroupField = ({ label, options, value, onChange, error }: RadioGroupFieldProps) => (
-  <div className="space-y-3">
+const SelectField = ({ label, options, value, onChange, placeholder, error }: SelectFieldProps) => (
+  <div>
     <label className="form-label">{label} <span className="text-primary">*</span></label>
-    <div className="grid gap-2">
+    <select
+      className="input-field appearance-none bg-[length:16px] bg-[right_12px_center] bg-no-repeat cursor-pointer"
+      style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")`,
+      }}
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+    >
+      <option value="" disabled className="bg-card text-muted-foreground">{placeholder}</option>
       {options.map((opt) => (
-        <div
-          key={opt}
-          className={`radio-option ${value === opt ? "selected" : ""}`}
-          onClick={() => onChange(opt)}
-        >
-          <div
-            className={`w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 transition-colors ${
-              value === opt ? "border-primary" : "border-muted-foreground"
-            }`}
-          >
-            {value === opt && <div className="w-2 h-2 rounded-full bg-primary" />}
-          </div>
-          <span className="text-sm text-foreground">{opt}</span>
-        </div>
+        <option key={opt} value={opt} className="bg-card text-foreground">{opt}</option>
       ))}
-    </div>
-    {error && <p className="text-sm text-destructive">{error}</p>}
+    </select>
+    {error && <p className="text-sm text-destructive mt-1">{error}</p>}
   </div>
 );
 
@@ -99,7 +95,6 @@ const YouConForm = () => {
     e.preventDefault();
     if (!validate()) return;
     setSubmitting(true);
-    // Redirect to Google Calendar
     window.location.href = "https://calendar.app.google/dBuq3LUK1s6y9JRv9";
   };
 
@@ -115,8 +110,7 @@ const YouConForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl mx-auto">
-      {/* Text inputs */}
+    <form onSubmit={handleSubmit} className="space-y-5 max-w-2xl mx-auto">
       {[
         { key: "nome", label: "Nome Completo", type: "text", placeholder: "Seu nome completo" },
         { key: "email", label: "E-mail", type: "email", placeholder: "seu@email.com" },
@@ -138,44 +132,48 @@ const YouConForm = () => {
         </div>
       ))}
 
-      {/* Radio groups */}
-      <RadioGroupField
+      <SelectField
         label="Qual tipo de serviço você está em busca?"
         options={serviceOptions}
         value={formData.servico}
         onChange={(val) => updateField("servico", val)}
+        placeholder="Selecione o tipo de serviço"
         error={errors.servico}
       />
 
-      <RadioGroupField
+      <SelectField
         label="Já possui terreno?"
         options={terrenoOptions}
         value={formData.terreno}
         onChange={(val) => updateField("terreno", val)}
+        placeholder="Selecione uma opção"
         error={errors.terreno}
       />
 
-      <RadioGroupField
+      <SelectField
         label="Você já possui algum projeto?"
         options={projetoOptions}
         value={formData.projeto}
         onChange={(val) => updateField("projeto", val)}
+        placeholder="Selecione uma opção"
         error={errors.projeto}
       />
 
-      <RadioGroupField
+      <SelectField
         label="Quando pretende iniciar a Obra?"
         options={prazoOptions}
         value={formData.prazo}
         onChange={(val) => updateField("prazo", val)}
+        placeholder="Selecione um prazo"
         error={errors.prazo}
       />
 
-      <RadioGroupField
+      <SelectField
         label="Quanto você espera que irá custar sua obra/construção?"
         options={orcamentoOptions}
         value={formData.orcamento}
         onChange={(val) => updateField("orcamento", val)}
+        placeholder="Selecione uma faixa de investimento"
         error={errors.orcamento}
       />
 
