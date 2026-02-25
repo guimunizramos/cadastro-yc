@@ -13,10 +13,10 @@ const Index = () => {
           <img
             src={bgDesktop}
             alt=""
-            className="w-full h-full object-cover opacity-20" />
+            className="w-full h-full object-cover opacity-50" />
 
         </picture>
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background/90" />
       </div>
 
       {/* Content */}
