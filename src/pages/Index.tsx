@@ -33,8 +33,7 @@ const Index = () => {
               CONSULTORIA VIP EXCLUSIVA
             </span>
             <h1 className="text-3xl font-extrabold leading-tight text-foreground mb-6 font-heading px-0 md:text-6xl">
-              O PROJETO DA SUA CASA MERECE{" "}
-              <span className="text-primary">ATENÇÃO PERSONALIZADA</span>
+              O PROJETO DA SUA CASA MERECE{" "} <span className="text-primary">ATENÇÃO PERSONALIZADA</span>
             </h1>
             <p className="text-base text-secondary-foreground leading-relaxed max-w-2xl mx-auto md:text-sm">
              Apenas 10 vagas abertas para quem deseja tirar o sonho do papel com o direcionamento dos nossos especialistas.
