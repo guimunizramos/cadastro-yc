@@ -30,16 +30,14 @@ const Index = () => {
         <main className="flex-1 px-4 py-12 md:py-20">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <span className="inline-block mb-6 px-5 py-1.5 rounded-full border border-primary text-primary uppercase text-xs font-semibold tracking-widest">
-              OPORTUNIDADE EXCLUSIVA
+              CONSULTORIA VIP EXCLUSIVA
             </span>
             <h1 className="text-3xl font-extrabold leading-tight text-foreground mb-6 font-heading px-0 md:text-6xl">
-              DÊ O PRÓXIMO PASSO PARA A SUA CASA EM{" "}
-              <span className="text-primary">STEEL FRAME</span>
+              O PROJETO DA SUA CASA MERECE{" "}
+              <span className="text-primary">ATENÇÃO PERSONALIZADA</span>
             </h1>
             <p className="text-base text-secondary-foreground leading-relaxed max-w-2xl mx-auto md:text-sm">
-              Preencha o formulário rápido abaixo para que nossa equipe técnica entenda o momento
-              atual do seu projeto. Ao finalizar, você será direcionado para nossa agenda exclusiva,
-              onde poderá escolher o melhor dia e horário para a sua reunião de viabilidade.
+             Apenas 10 vagas abertas para quem deseja tirar o sonho do papel com o direcionamento dos nossos especialistas.
             </p>
           </div>
 

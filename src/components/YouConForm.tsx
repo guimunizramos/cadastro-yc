@@ -116,7 +116,7 @@ const YouConForm = () => {
       console.error("Erro ao enviar formulário:", err);
     }
 
-    window.location.href = "https://calendar.app.google/GktonHjd7864Dsbs9";
+    window.location.href = "https://chat.whatsapp.com/BxXxLl9oORFDK16nmeBaX7?mode=gi_t";
   };
 
   const updateField = (field: string, value: string) => {
@@ -203,7 +203,7 @@ const YouConForm = () => {
         disabled={submitting}
         className="w-full rounded-lg bg-primary py-4 text-lg font-bold text-primary-foreground transition-all duration-200 hover:brightness-110 active:scale-[0.98] disabled:opacity-60 mt-4"
       >
-        {submitting ? "REDIRECIONANDO..." : "ACESSAR HORÁRIOS DISPONÍVEIS"}
+        {submitting ? "REDIRECIONANDO..." : "ENVIAR INFORMAÇÕES"}
       </button>
     </form>
   );
