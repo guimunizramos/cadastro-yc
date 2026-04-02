@@ -37,6 +37,12 @@ const orcamentoOptions = [
   "1.2 a +2 milhões",
 ];
 
+const estadoOptions = [
+  "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO",
+  "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI",
+  "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO",
+];
+
 interface SelectFieldProps {
   label: string;
   options: string[];
@@ -72,6 +78,7 @@ const YouConForm = () => {
     email: "",
     telefone: "",
     cidade: "",
+    estado: "",
     servico: "",
     terreno: "",
     projeto: "",
@@ -89,6 +96,7 @@ const YouConForm = () => {
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = "E-mail inválido";
     if (!formData.telefone.trim()) newErrors.telefone = "Campo obrigatório";
     if (!formData.cidade.trim()) newErrors.cidade = "Campo obrigatório";
+    if (!formData.estado) newErrors.estado = "Selecione uma opção";
     if (!formData.servico) newErrors.servico = "Selecione uma opção";
     if (!formData.terreno) newErrors.terreno = "Selecione uma opção";
     if (!formData.projeto) newErrors.projeto = "Selecione uma opção";
@@ -136,7 +144,6 @@ const YouConForm = () => {
         { key: "nome", label: "Nome Completo", type: "text", placeholder: "Seu nome completo" },
         { key: "email", label: "E-mail", type: "email", placeholder: "seu@email.com" },
         { key: "telefone", label: "Telefone (WhatsApp)", type: "tel", placeholder: "(00) 00000-0000" },
-        { key: "cidade", label: "Cidade / Estado", type: "text", placeholder: "Ex: São Paulo / SP" },
       ].map(({ key, label, type, placeholder }) => (
         <div key={key}>
           <label className="form-label">
@@ -152,6 +159,31 @@ const YouConForm = () => {
           {errors[key] && <p className="text-sm text-destructive mt-1">{errors[key]}</p>}
         </div>
       ))}
+
+      <div className="grid gap-4 md:grid-cols-[2fr_1fr]">
+        <div>
+          <label className="form-label">
+            Cidade <span className="text-primary">*</span>
+          </label>
+          <input
+            type="text"
+            className="input-field"
+            placeholder="Ex: São Paulo"
+            value={formData.cidade}
+            onChange={(e) => updateField("cidade", e.target.value)}
+          />
+          {errors.cidade && <p className="text-sm text-destructive mt-1">{errors.cidade}</p>}
+        </div>
+
+        <SelectField
+          label="Estado"
+          options={estadoOptions}
+          value={formData.estado}
+          onChange={(val) => updateField("estado", val)}
+          placeholder="UF"
+          error={errors.estado}
+        />
+      </div>
 
       <SelectField
         label="Qual tipo de serviço você está em busca?"
