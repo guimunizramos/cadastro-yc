@@ -24,10 +24,9 @@ const projetoOptions = [
 ];
 
 const prazoOptions = [
-  "01 a 03 meses",
-  "03 a 06 meses",
-  "06 meses a 01 ano",
-  "Mais de 01 ano",
+  "Ainda é um sonho, estou só pesquisando e me inspirando.",
+  "Já estou me planejando e quero iniciar o projeto nos próximos meses.",
+  "É minha prioridade agora, quero começar o quanto antes.",
 ];
 
 const orcamentoOptions = [
@@ -213,11 +212,11 @@ const YouConForm = () => {
       />
 
       <SelectField
-        label="Quando pretende iniciar a Obra?"
+        label="Qual é o seu momento atual em relação à construção da sua casa?"
         options={prazoOptions}
         value={formData.prazo}
         onChange={(val) => updateField("prazo", val)}
-        placeholder="Selecione um prazo"
+        placeholder="Selecione uma opção"
         error={errors.prazo}
       />
 
