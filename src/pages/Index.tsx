@@ -30,13 +30,13 @@ const Index = () => {
         <main className="flex-1 px-4 py-12 md:py-20">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <span className="inline-block mb-6 px-5 py-1.5 rounded-full border border-primary text-primary uppercase text-xs font-semibold tracking-widest">
-              CONSULTORIA VIP EXCLUSIVA
+              SOLUÇÃO COMPLETA YOUCON
             </span>
             <h1 className="text-3xl font-extrabold leading-tight text-foreground mb-6 font-heading px-0 md:text-6xl">
-              O PROJETO DA SUA CASA{" "} <span className="text-primary">COM INTELIGÊNCIA FINANCEIRA</span>
+              TUDO O QUE O PROJETO DA SUA CASA PRECISA, EM UM SÓ LUGAR
             </h1>
             <p className="text-base text-secondary-foreground leading-relaxed max-w-2xl mx-auto md:text-sm">
-             Apenas 10 vagas abertas para quem deseja tirar o sonho do papel com o direcionamento dos nossos especialistas.
+              Conte com uma equipe multidisciplinar para desenvolver todos os projetos da sua construção de forma integrada, personalizada e compatibilizada.
             </p>
           </div>
 
