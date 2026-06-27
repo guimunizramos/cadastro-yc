@@ -33,7 +33,7 @@ const Index = () => {
               SOLUÇÃO COMPLETA YOUCON
             </span>
             <h1 className="text-3xl font-extrabold leading-tight text-foreground mb-6 font-heading px-0 md:text-6xl">
-              TUDO O QUE O PROJETO DA SUA CASA PRECISA, EM UM SÓ LUGAR
+              TUDO O QUE O PROJETO DA SUA CASA PRECISA,{" "}<span className="text-primary">EM UM SÓ LUGAR</span>
             </h1>
             <p className="text-base text-secondary-foreground leading-relaxed max-w-2xl mx-auto md:text-sm">
               Conte com uma equipe multidisciplinar para desenvolver todos os projetos da sua construção de forma integrada, personalizada e compatibilizada.
